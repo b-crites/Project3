@@ -18,8 +18,6 @@ function generatePassword()
   }else{
     alert("You chose to make your password " + passwordlength + " characters long!");
   }
-
-  }
   console.log(passwordlength)
 
   var letters = confirm("Do you want to include letters in your password?")
