@@ -1,6 +1,9 @@
 // Assignment code here
-
-
+var upperCasedharacters = ['A','B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'];
+var lowerCaseLetters = ['a', 'b', 'c', 'd' , 'e', 'f', 'g', 'h', 'i', 'j','k','l','m','n','o','p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x','y','z']
+var numericCharacters = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
+var specialCharacters = ['!', '@', '#', '$', '%', '^', '&', '*', '(', ')', '_','-', '=', '+']
+var password = [];
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
@@ -9,7 +12,7 @@ function generatePassword(){
   //    1. password length 8 to 128 char.
   var passwordlength = prompt("How many character do you want in your password?\nChoose between 8 and 128.")
   if(passwordlength <= 7 || passwordlength >= 129){
-    alert("Please choose a number in the given range.")
+    alert("Please choose a number in the given range.");
        
   }else{
     alert("You chose to make your password " + passwordlength + " characters long!");
@@ -17,15 +20,21 @@ function generatePassword(){
 
   var letters = confirm("Do you want to include letters in your password?")
   if (letters == true){
-    var upperLetters = confirm("Do you also want upper case letter in your password?")
-    if(upperLetters == true){
-      alert("You will get both upper case and lower case letter." )
-    }else {
-      alert("You will only get lower case letters.")
-    }
-  }else{
-    alert("Letters will not be included.")
+    password.push(lowerCaseLetters);
+  } 
+  var upperLetters = confirm("Do you also want upper case letter in your password?")
+  if(upperLetters == true){
+    password.push(upperCasedharacters)
   }
+  var speChar = confirm('Do you want special characters in your password?')
+  if(speChar == true){
+    password.push(upperCasedharacters)}
+  var num = confirm("Do you want to include numbers?")
+  if(num == true){
+    password.push(numericCharacters)
+  }
+
+
   //       
   //    2. validate input. 
   //    3. generate password based on criteria.
