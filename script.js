@@ -22,17 +22,21 @@ function generatePassword(){
   if (letters == true){
     password.push(lowerCaseLetters);
   } 
+  console.log(password);
   var upperLetters = confirm("Do you also want upper case letter in your password?")
   if(upperLetters == true){
     password.push(upperCasedharacters)
   }
+  console.log(password);
   var speChar = confirm('Do you want special characters in your password?')
   if(speChar == true){
     password.push(upperCasedharacters)}
+    console.log(password);
   var num = confirm("Do you want to include numbers?")
   if(num == true){
     password.push(numericCharacters)
   }
+  console.log(password);
 
 
   //       
