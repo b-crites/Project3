@@ -7,7 +7,8 @@ var password = [];
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
-function generatePassword(){
+function generatePassword()
+{
   // prompt for password criteria
   //    1. password length 8 to 128 char.
   var passwordlength = prompt("How many character do you want in your password?\nChoose between 8 and 128.")
@@ -18,32 +19,43 @@ function generatePassword(){
     alert("You chose to make your password " + passwordlength + " characters long!");
   }
 
+  }
+  console.log(passwordlength)
+
   var letters = confirm("Do you want to include letters in your password?")
   if (letters == true){
-    password.push(lowerCaseLetters);
+    password = password.concat(lowerCaseLetters);
   } 
   console.log(password);
   var upperLetters = confirm("Do you also want upper case letter in your password?")
   if(upperLetters == true){
-    password.push(upperCasedharacters)
+    password = password.concat(upperCasedharacters)
   }
   console.log(password);
   var speChar = confirm('Do you want special characters in your password?')
   if(speChar == true){
-    password.push(upperCasedharacters)}
+    password = password.concat(specialCharacters)}
     console.log(password);
   var num = confirm("Do you want to include numbers?")
   if(num == true){
-    password.push(numericCharacters)
+    password = password.concat(numericCharacters)
   }
   console.log(password);
+
+  
 
 
   //       
   //    2. validate input. 
   //    3. generate password based on criteria.
-  
-  return "Generated password will go here."
+  var lastPassword = [];
+  for(let i = 0; i < passwordlength; i++){
+    var randIndex = Math.floor(Math.random() * password.length);
+    lastPassword.push(password[randIndex])
+  }
+
+
+  return lastPassword.join("");
 
 }
 
